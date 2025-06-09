@@ -1,0 +1,21 @@
+[package]
+name = "angular-auth-analyzer"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "angular-auth-analyzer"
+path = "src/main.rs"
+
+[dependencies]
+clap = "2.34"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+walkdir = "2.3"
+regex = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
